@@ -1,0 +1,9 @@
+{% if latest_moveForm_list %}
+    <ul>
+    {% for moveform in latest_moveForm_list %}
+        <li><a href="/polls/{{ moveForm.id }}/">{{ moveForm.fName }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

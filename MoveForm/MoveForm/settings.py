@@ -60,7 +60,7 @@ ROOT_URLCONF = 'MoveForm.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates/app')],
+        'DIRS': [os.path.join(BASE_DIR, '../templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -73,6 +73,9 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_DIRS = ((os.path.join(BASE_DIR), )
+    
+)
 WSGI_APPLICATION = 'MoveForm.wsgi.application'
 
 

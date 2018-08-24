@@ -71,12 +71,12 @@
     <Content Include="mvForms\static\app\scripts\modernizr-2.6.2.js" />
     <Content Include="mvForms\static\app\scripts\respond.js" />
     <Content Include="mvForms\static\app\scripts\respond.min.js" />
-    <Content Include="mvForms\templates\app\about.html" />
-    <Content Include="mvForms\templates\app\contact.html" />
-    <Content Include="mvForms\templates\app\index.html" />
-    <Content Include="mvForms\templates\app\layout.html" />
-    <Content Include="mvForms\templates\app\login.html" />
-    <Content Include="mvForms\templates\app\loginpartial.html" />
+    <Content Include="mvForms\templates\about.html" />
+    <Content Include="mvForms\templates\contact.html" />
+    <Content Include="mvForms\templates\index.html" />
+    <Content Include="mvForms\templates\layout.html" />
+    <Content Include="mvForms\templates\login.html" />
+    <Content Include="mvForms\templates\loginpartial.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +89,6 @@
     <Folder Include="mvForms\static\app\fonts\" />
     <Folder Include="mvForms\static\app\scripts\" />
     <Folder Include="mvForms\templates\" />
-    <Folder Include="mvForms\templates\app\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">

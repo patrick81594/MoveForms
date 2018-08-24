@@ -8,12 +8,11 @@ from .models import moveForm
 
 def index(request):
     latest_moveForm_list = moveForm.objects.order_by('-publication_date')[:5]
-    template = loader.get_template('mvForms/index.html')
     context = {
             'latest_moveForm_list' : latest_moveForm_list,
         }
     #output = ', '.join([q.fName for q in latest_moveForm_list])
-    return render(request, 'mvForms/templates/app/index.html', context)
+    return render(request, 'mvForms/templates/index.html', context)
 
 def details(request, moveForm_id):
     response = "You're looking at the results of question %s."
