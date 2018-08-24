@@ -1,0 +1,41 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<head>
+{%load staticfiles %}
+<link href={% static "content/bootstrap.min.css" %} rel="stylesheet">
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src={% static "scripts/bootstrap.min.js" %}></script>
+<div class="jumbotron">
+    <h1>Move Form</h1>
+</div>
+<div class="container justify-content-md-center">
+    
+    <form >
+    <div class="form-group">
+     <b class="row justify-content-center">First Name: </b><input type="text" /><br />
+     <b class="row">Last Name: </b><input type="text" /> <br />
+    </div>
+     <b class="row">ID: </b><input type="text" /><br />
+     <b class="row">E-Mail: </b><input type="email" /><br />
+     <b class="row">Citizenship: </b><input type="text" /><br />
+     <b class="row">Company:</b><input type="text" /><br />
+     
+     <b class="row">Manager: </b><input type="text" /><br />
+     <b class="row">Sub POC: </b><input type="text" /><br />
+     <b class="row">Program: </b><input type="text" /><br />
+     <b class="row">Location: </b><input type="text" /><br />
+     <b class="row">Phone #: </b><input type="text" /><br />
+     <b class="row">FAA Badge:</b><input type="text" /><br />
+     <b class="row">FAA Parking: </b><input type="text" /><br />
+     <b class="row">Comments: </b><input type="text" /><br />
+     
+    </form> 
+ 
+</div>
+
+
+</body>
+{% endblock %}
