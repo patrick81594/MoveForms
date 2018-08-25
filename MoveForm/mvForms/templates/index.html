@@ -1,7 +1,7 @@
 {% if latest_moveForm_list %}
     <ul>
     {% for moveform in latest_moveForm_list %}
-        <li><a href="{% url 'detail' moveform.id %}">{{ moveform.fName }}  {{ moveform.lName }}</a></li>
+        <li><a href="{% url 'mvForms:detail' moveform.id %}">{{ moveform.fName }}  {{ moveform.lName }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

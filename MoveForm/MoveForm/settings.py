@@ -84,8 +84,12 @@ WSGI_APPLICATION = 'MoveForm.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'moveFormDB',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST' : 'localhost',
+        'PORT': '3306',
+        'USER': 'harveyp',
+        'PASSWORD' : 'MclarenP1',
     }
 }
 
@@ -114,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/New_York'
 
 USE_I18N = True
 

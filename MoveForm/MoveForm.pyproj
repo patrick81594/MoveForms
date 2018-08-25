@@ -49,28 +49,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mvForms\index.html" />
-    <Content Include="mvForms\static\app\content\bootstrap.css" />
-    <Content Include="mvForms\static\app\content\bootstrap.min.css" />
-    <Content Include="mvForms\static\app\content\site.css" />
-    <Content Include="mvForms\static\app\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="mvForms\static\app\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="mvForms\static\app\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="mvForms\static\app\fonts\glyphicons-halflings-regular.woff" />
-    <None Include="mvForms\static\app\scripts\_references.js" />
-    <Content Include="mvForms\static\app\scripts\bootstrap.js" />
-    <Content Include="mvForms\static\app\scripts\bootstrap.min.js" />
-    <None Include="mvForms\static\app\scripts\jquery.validate-vsdoc.js" />
-    <None Include="mvForms\static\app\scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="mvForms\static\app\scripts\jquery-1.10.2.js" />
-    <Content Include="mvForms\static\app\scripts\jquery-1.10.2.min.js" />
-    <Content Include="mvForms\static\app\scripts\jquery-1.10.2.min.map" />
-    <Content Include="mvForms\static\app\scripts\jquery.validate.js" />
-    <Content Include="mvForms\static\app\scripts\jquery.validate.min.js" />
-    <Content Include="mvForms\static\app\scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="mvForms\static\app\scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="mvForms\static\app\scripts\modernizr-2.6.2.js" />
-    <Content Include="mvForms\static\app\scripts\respond.js" />
-    <Content Include="mvForms\static\app\scripts\respond.min.js" />
+    <Content Include="mvForms\static\content\bootstrap.css" />
+    <Content Include="mvForms\static\content\bootstrap.min.css" />
+    <Content Include="mvForms\static\content\site.css" />
+    <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="mvForms\static\scripts\_references.js" />
+    <Content Include="mvForms\static\scripts\bootstrap.js" />
+    <Content Include="mvForms\static\scripts\bootstrap.min.js" />
+    <None Include="mvForms\static\scripts\jquery.validate-vsdoc.js" />
+    <None Include="mvForms\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="mvForms\static\scripts\jquery-1.10.2.js" />
+    <Content Include="mvForms\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="mvForms\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="mvForms\static\scripts\jquery.validate.js" />
+    <Content Include="mvForms\static\scripts\jquery.validate.min.js" />
+    <Content Include="mvForms\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="mvForms\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="mvForms\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="mvForms\static\scripts\respond.js" />
+    <Content Include="mvForms\static\scripts\respond.min.js" />
     <Content Include="mvForms\templates\about.html" />
     <Content Include="mvForms\templates\contact.html" />
     <Content Include="mvForms\templates\detail.html" />
@@ -87,10 +87,9 @@
     <Folder Include="mvForms\" />
     <Folder Include="mvForms\migrations\" />
     <Folder Include="mvForms\static\" />
-    <Folder Include="mvForms\static\app\" />
-    <Folder Include="mvForms\static\app\content\" />
-    <Folder Include="mvForms\static\app\fonts\" />
-    <Folder Include="mvForms\static\app\scripts\" />
+    <Folder Include="mvForms\static\content\" />
+    <Folder Include="mvForms\static\fonts\" />
+    <Folder Include="mvForms\static\scripts\" />
     <Folder Include="mvForms\templates\" />
   </ItemGroup>
   <ItemGroup>
