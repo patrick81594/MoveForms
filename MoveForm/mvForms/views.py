@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from django.http import HttpResponse
 from django import template
 from django.template import loader
 from .models import moveForm
+
 
 
 def index(request):
@@ -12,10 +13,11 @@ def index(request):
             'latest_moveForm_list' : latest_moveForm_list,
         }
     #output = ', '.join([q.fName for q in latest_moveForm_list])
-    return render(request, 'mvForms/templates/index.html', context)
+    return render(request, 'index.html', context)
 
-def details(request, moveForm_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % moveForm_id)
+def detail(request, moveForm_id):
+    mvFormDetails = get_object_or_404(moveForm, pk = moveForm_id)
+    return render(request, 'detail.html', {'MoveForm': mvFormDetails})
+    
 
 

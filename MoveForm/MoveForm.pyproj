@@ -73,6 +73,7 @@
     <Content Include="mvForms\static\app\scripts\respond.min.js" />
     <Content Include="mvForms\templates\about.html" />
     <Content Include="mvForms\templates\contact.html" />
+    <Content Include="mvForms\templates\detail.html" />
     <Content Include="mvForms\templates\index.html" />
     <Content Include="mvForms\templates\layout.html" />
     <Content Include="mvForms\templates\login.html" />
@@ -81,8 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MoveForm\" />
-    <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\" />
-    <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\migrations\" />
+    <Folder Include="C:\Users\Pat\source\repos\MoveForms\MoveForm\mvForms\" />
+    <Folder Include="C:\Users\Pat\source\repos\MoveForms\MoveForm\mvForms\migrations\" />
+    <Folder Include="mvForms\" />
+    <Folder Include="mvForms\migrations\" />
     <Folder Include="mvForms\static\" />
     <Folder Include="mvForms\static\app\" />
     <Folder Include="mvForms\static\app\content\" />

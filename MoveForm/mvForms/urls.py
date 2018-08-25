@@ -4,6 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<int:moveForm_id>/', views.details, name = "detail"),
+    path('<int:moveForm_id>/', views.detail, name = "detail"),
 
 ]

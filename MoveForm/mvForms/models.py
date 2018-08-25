@@ -1,11 +1,10 @@
 from django.db import models
 from django.utils import timezone
-
-
+from django.utils.translation import gettext as _
 class moveForm(models.Model):
     fName = models.CharField(max_length=100)
     lName = models.CharField(max_length=200)
-    userID = models.CharField(max_length = 100)
+    userID = models.AutoField
     eMail = models.CharField(max_length = 200)
     citizenship = models.CharField(max_length = 100)
     company = models.CharField(max_length = 200)
@@ -17,11 +16,11 @@ class moveForm(models.Model):
     faaBadge = models.CharField(max_length = 200)
     faaParking = models.CharField(max_length = 200)
     comments = models.CharField(max_length = 1000)
-    publication_date = models.CharField(max_length = 50)
+    publication_date = models.DateField(default = timezone.now)
     def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+       return self.publication_date >= timezone.now() - datetime.timedelta(days=1)
     def __str__(self):
-        return self.fName
+       return self
 
 class taskOverview(models.Model):
   person = models.ForeignKey(moveForm, on_delete=models.CASCADE)
