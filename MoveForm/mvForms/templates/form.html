@@ -1,0 +1,13 @@
+﻿{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+        <form action="" method='POST'>{% csrf_token %}
+            {{ formset.management_form }}
+              
+              {% crispy form %}
+              
+
+        </form>
+
+{% endblock %}

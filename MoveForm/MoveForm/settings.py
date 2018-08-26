@@ -26,7 +26,7 @@ SECRET_KEY = '565f7cb2-3094-44c3-960b-197f361f13ec'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     #'mvForms.apps.MvformsConfig',
     'MoveForm',
     'mvForms',
@@ -81,17 +82,25 @@ WSGI_APPLICATION = 'MoveForm.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'NAME': 'moveFormDB',
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST' : 'localhost',
-        'PORT': '3306',
-        'USER': 'harveyp',
-        'PASSWORD' : 'MclarenP1',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+#DATABASES = {
+#   'default': {
+#       'NAME': 'moveformdb',
+#       'ENGINE': 'django.db.backends.mysql',
+#       'HOST' : 'localhost',
+#       'PORT': '3306',
+#       'USER': 'harveyp',
+#       'PASSWORD' : 'MclarenP1',
+#       'OPTIONS': {
+#          'autocommit': True,
+#        },
+#    }
+#}
 
 
 # Password validation
