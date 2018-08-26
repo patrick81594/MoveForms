@@ -22,19 +22,17 @@ def detail(request, moveForm_id):
     return render(request, 'detail.html', {'MoveForm': mvFormDetails})
     
 def form(request):
-    moveFmFormSet = modelformset_factory(moveForm, fields = ('fName', 'lName', 'eMail', 'Citizenship','Company',
-                  'Manager', 'subPOC', 'program', 'location', 'phoneNum', 'faaBadge', 'faaParking', 'comments'))
     if request.method == 'POST':
-        formset = moveFmFormSet(request.POST, request.FILES, instance = moveForm)
-        if formset.is_valid():
-            formset.save()
+        form = mvForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
             latest_moveForm_list = moveForm.objects.order_by('-publication_date')[:5]
             context = {
                  'latest_moveForm_list' : latest_moveForm_list,
             }
-            render(request, 'index.html', context)
+            return render(request, 'index.html', context)
 
     else:
-        formset = moveFmFormSet()
+        form = mvForm()
     return render(request, 'form.html', {'form': mvForm()})
 

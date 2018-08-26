@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from django import forms
+from .models import moveForm
 
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Submit, HTML, Button, Row, Field
@@ -59,26 +60,17 @@ from crispy_forms.bootstrap import AppendedText, PrependedText, FormActions
 #        )
 #    )
 
-class mvForm(forms.Form):
-        First_Name = forms.CharField(max_length=100)
-        Last_Name = forms.CharField(max_length=200)
-        eMail = forms.EmailField()
-        Citizenship = forms.CharField(max_length = 100)
-        Company = forms.CharField(max_length = 200)
-        Manager = forms.CharField(max_length = 200)
-        subPOC = forms.CharField(max_length = 200)
-        program = forms.CharField(max_length = 200)
-        location = forms.ChoiceField(choices = (('WJHTC', "Technical Center"), ('Gathesburg', "Maryland")))
-        phoneNum = forms.IntegerField()
-        
-        faaBadge = forms.CharField(max_length = 200)
-        faaParking = forms.CharField(max_length = 200)
-        comments = forms.CharField(widget = forms.Textarea(),)
-        publication_date = forms.DateTimeField()
+class mvForm(forms.ModelForm):
+    class Meta:
+        model = moveForm
+        fields = ['First_Name', 'Last_Name', 'eMail', 'Citizenship', 'Company', 'Manager', 'subPOC', 'program', 'location', 'phoneNum',
+                  'faaBadge', 'faaParking', 'comments', 'publication_date']
+
         # Uni-form
-        helper = FormHelper()
-        helper.form_class = 'form-horizontal'
-        helper.layout = Layout(
+    helper = FormHelper()
+    helper.form_class = 'form-horizontal'
+    helper.form_method = 'POST'
+    helper.layout = Layout(
         Field('First_Name', css_class='input-xlarge', id = "firstName"),
         Field('Last_Name', rows="3", css_class='input-xlarge'),
         Field('eMail', css_class = 'input-xlarge'),
@@ -101,5 +93,5 @@ class mvForm(forms.Form):
         FormActions(
             Submit('save_changes', 'Save changes', css_class="btn-primary"),
             Submit('cancel', 'Cancel'),
-        )
     )
+)

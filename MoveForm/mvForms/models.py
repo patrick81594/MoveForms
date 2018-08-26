@@ -3,9 +3,9 @@ from django.utils import timezone
 from django.forms import ModelForm
 from django.utils.translation import gettext as _
 class moveForm(models.Model):
-    fName = models.CharField(max_length=100)
-    lName = models.CharField(max_length=200)
-    #userID = models.AutoField
+    First_Name = models.CharField(max_length=100)
+    Last_Name = models.CharField(max_length=200)
+    userID = models.AutoField
     eMail = models.EmailField()
     Citizenship = models.CharField(max_length = 100)
     Company = models.CharField(max_length = 200)
@@ -14,7 +14,6 @@ class moveForm(models.Model):
     program = models.CharField(max_length = 200)
     location = models.CharField(max_length = 200)
     phoneNum = models.IntegerField()
-
     faaBadge = models.CharField(max_length = 200)
     faaParking = models.CharField(max_length = 200)
     comments = models.TextField(max_length = 1500)
@@ -27,7 +26,7 @@ class moveForm(models.Model):
 class mvForm(ModelForm):
     class Meta:
         model = moveForm
-        fields = ['fName', 'lName', 'eMail', 'Citizenship','Company',
+        fields = ['First_Name', 'Last_Name', 'eMail', 'Citizenship','Company',
                   'Manager', 'subPOC', 'program', 'location', 'phoneNum', 'faaBadge', 'faaParking', 'comments']
 
 class taskOverview(models.Model):
