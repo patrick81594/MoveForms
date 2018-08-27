@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import moveForm
-
+from .models import moveForm, user
+from .forms import mvForm
 # Register your models here.
 admin.site.register(moveForm)
+admin.site.register(user)

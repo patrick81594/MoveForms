@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.forms import ModelForm
+from django import forms
 from django.utils.translation import gettext as _
 class moveForm(models.Model):
     First_Name = models.CharField(max_length=100)
@@ -21,7 +22,7 @@ class moveForm(models.Model):
     def was_published_recently(self):
        return self.publication_date >= timezone.now() - datetime.timedelta(days=1)
     def __str__(self):
-       return self.fName
+       return self.First_Name
 
 class mvForm(ModelForm):
     class Meta:
@@ -38,6 +39,8 @@ class taskOverview(models.Model):
 class user(models.Model):
   firstName = models.CharField(max_length=100)
   lastName = models.CharField(max_length=200)
+  userName = models.CharField(max_length = 100)
+  password = models.CharField(max_length = 50)
   eMail = models.CharField(max_length = 200)
   company = models.CharField(max_length = 200)
   Manager = models.CharField(max_length = 200)

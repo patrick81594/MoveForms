@@ -1,15 +1,18 @@
-﻿<!DOCTYPE html>
-
+﻿
+<!DOCTYPE html>
+{% extends 'layout.html' %}
 <html>
 <head>
     <meta charset="utf-8" />
     <title></title>
 </head>
+{% block content %}
 <body>
     
     <div><ul>
-    <li>{{ MoveForm.fName }}</li>
-    <li>{{ MoveForm.lName }}</li>
+    <li>{{ MoveForm.First_Name }}</li>
+    <li>{{ MoveForm.Last_Name }}</li>
 </ul></div>
 </body>
+{% endblock %}
 </html>

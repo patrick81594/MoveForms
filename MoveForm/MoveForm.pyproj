@@ -83,6 +83,7 @@
     <Content Include="mvForms\templates\layout.html" />
     <Content Include="mvForms\templates\login.html" />
     <Content Include="mvForms\templates\loginpartial.html" />
+    <Content Include="mvForms\templates\userRegister.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
