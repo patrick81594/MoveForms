@@ -51,7 +51,6 @@
     <Compile Include="MoveForm\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mvForms\index.html" />
     <Content Include="mvForms\static\content\bootstrap.css" />
     <Content Include="mvForms\static\content\bootstrap.min.css" />
     <Content Include="mvForms\static\content\site.css" />
@@ -88,8 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MoveForm\" />
-    <Folder Include="C:\Users\Pat\source\repos\MoveForms\MoveForm\mvForms\" />
-    <Folder Include="C:\Users\Pat\source\repos\MoveForms\MoveForm\mvForms\migrations\" />
+    <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\" />
+    <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\migrations\" />
     <Folder Include="mvForms\" />
     <Folder Include="mvForms\migrations\" />
     <Folder Include="mvForms\static\" />

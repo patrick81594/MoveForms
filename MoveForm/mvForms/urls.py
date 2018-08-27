@@ -7,5 +7,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('<int:moveForm_id>/', views.detail, name = "detail"),
     path('form/', views.form, name = "form"),
-    path('regUser/', views.userRegisterForm, name = "userRegister")
+    path('regUser/', views.userForm, name = "userRegister")
 ]

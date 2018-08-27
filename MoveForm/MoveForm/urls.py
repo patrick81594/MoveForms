@@ -12,7 +12,8 @@ from django.urls import include, path
 
 urlpatterns = [
     # Examples:
-    path('mvforms/', include('mvForms.urls')),
+    #path('mvforms/', include('mvForms.urls')),
+    path('', include('mvForms.urls')),
     path('admin/', admin.site.urls),
     # Uncomment the admin/doc line below to enable admin documentation:
     #url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

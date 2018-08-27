@@ -28,7 +28,7 @@ class mvForm(ModelForm):
     class Meta:
         model = moveForm
         fields = ['First_Name', 'Last_Name', 'eMail', 'Citizenship','Company',
-                  'Manager', 'subPOC', 'program', 'location', 'phoneNum', 'faaBadge', 'faaParking', 'comments']
+                  'Manager', 'subPOC', 'program', 'location', 'phoneNum', 'faaBadge', 'faaParking','publication_date', 'comments']
 
 class taskOverview(models.Model):
   person = models.ForeignKey(moveForm, on_delete=models.CASCADE)
@@ -39,10 +39,16 @@ class taskOverview(models.Model):
 class user(models.Model):
   firstName = models.CharField(max_length=100)
   lastName = models.CharField(max_length=200)
-  userName = models.CharField(max_length = 100)
+  username = models.CharField(max_length = 100)
   password = models.CharField(max_length = 50)
   eMail = models.CharField(max_length = 200)
   company = models.CharField(max_length = 200)
   Manager = models.CharField(max_length = 200)
   program = models.CharField(max_length = 200)
   phoneNum = models.IntegerField()
+
+class userForm(ModelForm):
+    class Meta:
+        model = user
+        fields = ['firstName', 'lastName', 'eMail', 'username','password',
+                  'company', 'Manager', 'program', 'phoneNum']
