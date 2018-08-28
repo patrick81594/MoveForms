@@ -11,6 +11,7 @@ from django.contrib.auth.models import User
 
 
 def index(request):
+    
     latest_moveForm_list = moveForm.objects.order_by('-publication_date')[:5]
     context = {
             'latest_moveForm_list' : latest_moveForm_list,

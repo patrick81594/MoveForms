@@ -21,9 +21,11 @@ class mvForm(forms.ModelForm):
         self.helper.add_input(Submit('submit', 'Submit'))
         self.helper.add_input(Submit('cancel', 'Cancel'))
         self.helper.layout = Layout(
-             Field('First_Name', css_class='input-xlarge', id = "firstName"),
+           Fieldset(
+             Field('First_Name', css_class='form-control', id = "firstName"),
              Field('Last_Name', rows="3", css_class='input-xlarge'),
-             Field('eMail', css_class = 'input-xlarge'),
+             Field('eMail'),
+             ),
              Field('Citizenship', css_class = 'input-xlarge'),
              Field('Company', css_class = 'input-xlarge'),
              Field('Manager', css_class = 'input-xlarge'),
@@ -35,10 +37,15 @@ class mvForm(forms.ModelForm):
              Field('faaParking', css_class = 'input-xlarge'),
              Field('comments', css_class = 'input-xlarge'),
              Field('publication_date', css_class = 'input-xlarge'),
+        
+             
              FormActions(
                     Submit('submit', 'Submit', css_class='btn-primary'),
-                    Button('cancel', 'Cancel')
-            )
+                    Button('cancel', 'Cancel'),
+            ),
+        self.helper[0:2].wrap_together(layout.Fieldset, 'Your name')
+
+           
 )
 
 class userRegisterForm(forms.ModelForm):
@@ -50,10 +57,10 @@ class userRegisterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(userRegisterForm, self).__init__(*args,**kwargs)
         self.helper = FormHelper()
-        self.helper.form_class = 'form-horizontal'
+       # self.helper.form_class = 'form-horizontal'
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
-                Field('firstName', css_class='input-xlarge', id = "firstName"),
+                Field('firstName', css_class='fieldset', id = "firstName"),
                 Field('lastName', rows="3", css_class='input-xlarge'),
                 Field('username', css_class = 'input-xlarge'),
                 Field('password', css_class = 'input-xlarge'),

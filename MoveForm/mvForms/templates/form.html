@@ -6,28 +6,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - My Django Application</title>
-    {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'content/bootstrap.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'content/site.css' %}" />
-    <script src="{% static 'scripts/modernizr-2.6.2.js' %}"></script>
+
 </head>
   
 <body>
 
 {% block content %}
-<form action="" method='POST'>
+    <div>
+        <form action="" method='POST'>
             
             {% csrf_token %}
             {% load crispy_forms_tags %}
             {{ formset.management_form }}         
-            {{form |crispy}}
+            {% crispy form %}
  
             <button type="submit" class="btn btn-primary">Submit</button>
             <button type="button" class="btn btn-primary" onclick="window.location.href=window.location.href">Cancel</button>
             
             
             
-</form>
+        </form>
+    </div>
 {% endblock %}
 </body>
 
