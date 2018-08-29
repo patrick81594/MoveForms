@@ -1,13 +1,31 @@
 ﻿{% extends 'layout.html' %}
-{% load crispy_forms_tags %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - My Django Application</title>
+
+</head>
+  
+<body>
 
 {% block content %}
-        <form action="" method='POST'>{% csrf_token %}
-            {{ formset.management_form }}
-              
-              {% crispy form %}
-              
-
-        </form>
-
+            <div class="container">
+                <div class="row">                
+                    <form action="" method='POST'>{% csrf_token %}
+                    {% load crispy_forms_tags %}
+                    {%  bootstrap_form form %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="window.location.href=window.location.href">Cancel</button>
+                    </form>
+                    </div>
+                </div>
 {% endblock %}
+</body>
+
+</html>

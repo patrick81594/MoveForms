@@ -9,10 +9,31 @@
 {% block content %}
 <body>
     
-    <div><ul>
-    <li>{{ MoveForm.First_Name }}</li>
-    <li>{{ MoveForm.Last_Name }}</li>
-</ul></div>
+    <div>           
+        <h1 class="text-center">{{mvFormDetails.First_Name}}'s move form</h1>
+            <ul class="list-group list-group">
+                        <li class="list-unstyled list-group-item">{{ mvFormDetails.First_Name }} </li>
+                        <li class="list-unstyled list-group-item ">{{mvFormDetails.Last_Name }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.eMail }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.Citizenship }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.Company }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.Manager }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.subPOC }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.program }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.location }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.phoneNum }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.faaBadge }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.faaParking }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.comments }}</li>
+                        <li class="list-unstyled list-group-item ">{{ mvFormDetails.publication_date }}</li>
+                        </ul>
+        <h3 class="text-center">Task's for {{mvFormDetails.First_Name}}</h3>
+            <ul class="list-group">
+                {% for task in tasks %}
+                      <li class="list-unstyled list-group-item "><span class="badge">{{task.dateAssigned}}</span>{{ task.assignee }}   |   {{task.task}} | <span class="badge badge-primary badge-pill alert-warning">DUE: {{task.dateDue}}</span></li>
+                {% endfor %}
+            </ul>
+    </div>
 </body>
 {% endblock %}
 </html>

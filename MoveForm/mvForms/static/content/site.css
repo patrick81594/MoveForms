@@ -1,13 +1,13 @@
 body {
-    align-content: center;
-    padding-top: 50px;
+    
+    padding-top: 100px;
     padding-bottom: 20px;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    align-content: center;
-    padding-left: 500px;
+    
+    padding-left: 50px;
     padding-right: 45px;
 }
 

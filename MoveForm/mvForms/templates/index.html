@@ -1,4 +1,7 @@
 ﻿{% extends 'layout.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <!DOCTYPE html>
 
 <html>
@@ -11,18 +14,19 @@
 </head>
 {% block content %}
 <body >
-<div class="row">
-    <div class="center-block">
-{% if latest_moveForm_list %}
-    <ul>
-    {% for moveform in latest_moveForm_list %}
-        <li class="list-inline"><a href="{% url 'mvForms:detail' moveform.id %}">{{ moveform.First_Name }} {{moveform.Last_Name }} {{ moveform.publication_date }} {{moveform.location }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No move forms available are available.</p>
-{% endif %}
-     </div>
+<div class="container6">
+        {% if user.is_authenticated %}
+            {% if latest_moveForm_list %}
+                <ul class="list-group list-group-">
+                    {% for moveform in latest_moveForm_list %}
+                        <li class="list-unstyled list-group-item "><a href="{% url 'mvForms:detail' moveform.id %}">{{ moveform.First_Name }} {{moveform.Last_Name }} {{ moveform.publication_date }} </a><span class="badge badge-primary badge-pill">{{moveform.location }}</span></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}    
+        {% else %}
+        <h1 align="center">Please Login</h1>
+        <h5 class="text-center"><a href="{% url 'login'%}">Click here to login.</a></h5>
+        {% endif %}
 </div>
 </body>
 {% endblock %}

@@ -51,9 +51,11 @@
     <Compile Include="MoveForm\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="db.sqlite3" />
+    <Content Include="mvForms\templates\registration\logout.html" />
+    <Content Include="mvForms\templates\registration\login.html" />
     <Content Include="mvForms\static\content\bootstrap.css" />
     <Content Include="mvForms\static\content\bootstrap.min.css" />
-    <Content Include="mvForms\static\content\lacey.css" />
     <Content Include="mvForms\static\content\site.css" />
     <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="mvForms\static\fonts\glyphicons-halflings-regular.svg" />
@@ -83,6 +85,7 @@
     <Content Include="mvForms\templates\layout.html" />
     <Content Include="mvForms\templates\login.html" />
     <Content Include="mvForms\templates\loginpartial.html" />
+    <Content Include="mvForms\templates\tasks.html" />
     <Content Include="mvForms\templates\userRegister.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -92,6 +95,7 @@
     <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\migrations\" />
     <Folder Include="mvForms\" />
     <Folder Include="mvForms\migrations\" />
+    <Folder Include="C:\Users\harveyp\source\repos\MoveForm\MoveForm\mvForms\templates\registration\" />
     <Folder Include="mvForms\static\" />
     <Folder Include="mvForms\static\content\" />
     <Folder Include="mvForms\static\fonts\" />

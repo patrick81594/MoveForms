@@ -28,7 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
+APPEND_SLASH = False
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGOUT_URL = 'logout/'
 # Application definition
 
 INSTALLED_APPS = [
@@ -40,10 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-    #'mvForms.apps.MvformsConfig',
     'MoveForm',
     'mvForms',
-    
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +62,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'MoveForm.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+BOOTSTRAP3 = {
 
+    "javascript_in_head": True,
+    "required_css_class": "bootstrap3-req",
+    "error_css_class": "bootstrap3-err",
+    "success_css_class": "bootstrap3-bound",
+}
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
