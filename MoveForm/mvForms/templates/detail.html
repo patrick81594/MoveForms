@@ -28,11 +28,17 @@
                         <li class="list-unstyled list-group-item ">{{ mvFormDetails.publication_date }}</li>
                         </ul>
         <h3 class="text-center">Task's for {{mvFormDetails.First_Name}}</h3>
-            <ul class="list-group">
-                {% for task in tasks %}
-                      <li class="list-unstyled list-group-item "><span class="badge">{{task.dateAssigned}}</span>{{ task.assignee }}   |   {{task.task}} | <span class="badge badge-primary badge-pill alert-warning">DUE: {{task.dateDue}}</span></li>
-                {% endfor %}
-            </ul>
+          
+           {% if tasks == null %}
+                <span class =""><a href="{% url 'mvForms:tasks' mvFormDetails.id %}"> Add Task</a></span>
+           {% else %}
+            {% for task in tasks %}
+                <ul class="list-group">
+                      <li class="list-unstyled list-group-item "><span class="badge"><a href="{% url 'mvForms:tasks' mvFormDetails.id %}"> Add Task</a></span>{{ task.assignee }}   |   {{task.task}} | <span class="badge badge-primary badge-pill alert-warning">DUE: {{task.dateDue}}</span></li>
+                </ul>
+            {% endfor %}
+           {% endif %}
+          
     </div>
 </body>
 {% endblock %}

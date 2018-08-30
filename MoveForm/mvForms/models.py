@@ -5,6 +5,8 @@ from django.forms import ModelForm
 from django import forms
 from django.utils.translation import gettext as _
 from django.contrib.auth.validators import ASCIIUsernameValidator
+from django.shortcuts import get_object_or_404
+
 class moveForm(models.Model):
     First_Name = models.CharField(max_length=100)
     Last_Name = models.CharField(max_length=200)
@@ -21,28 +23,31 @@ class moveForm(models.Model):
     faaParking = models.CharField(max_length = 200)
     comments = models.TextField(max_length = 1500)
     publication_date = models.DateTimeField()
-    
     def was_published_recently(self):
        return self.publication_date >= timezone.now() - datetime.timedelta(days=1)
     def __str__(self):
        return self.First_Name
 
 class assignedTask(models.Model):
-        assignee_choices = (
+  assignee_choices = (
             ('patrick', 'Patrick'),
             ('david', 'David'),
             ('sean', 'Sean'),
             ('michelle','Michelle'),
-            ('barbra', 'Barbra'),
+            ('barbra', 'Barbra')
             )
-        relation = models.ForeignKey(moveForm, on_delete=models.CASCADE)
-        assignee = models.CharField(max_length = 200)
-        task = models.TextField()
-        dateDue = models.DateTimeField()
-        dateAssigned = models.DateTimeField(auto_now_add = True)
-        assignedTo = models.CharField(max_length = 20, choices = assignee_choices, default = 'patrick')
-        def __str__(self):
-            return self.assignee
+  relatedForm = models.ForeignKey(moveForm, on_delete=models.CASCADE)
+  assignee = models.CharField(max_length = 200)
+  task = models.TextField()
+  dateDue = models.DateTimeField()
+  dateAssigned = models.DateTimeField(auto_now_add = True)
+  assignedTo = models.CharField(max_length = 20, choices = assignee_choices, default = 'patrick')
+        
+  def __str__(self):
+      mvFormDetails = get_object_or_404(moveForm, pk = self.pk)
+      name = mvFormDetails.First_Name
+      return name
+
 
 
 class mvForm(ModelForm):
@@ -51,11 +56,6 @@ class mvForm(ModelForm):
         fields = ['First_Name', 'Last_Name', 'eMail', 'Citizenship','Company',
                   'Manager', 'subPOC', 'program', 'location', 'phoneNum', 'faaBadge', 'faaParking','publication_date', 'comments']
 
-class taskOverview(models.Model):
-  person = models.ForeignKey(moveForm, on_delete=models.CASCADE)
-  assignee = models.CharField(max_length = 200)
-  completionDate = models.CharField(max_length = 200)
-  taskToBeCompleted = models.CharField(max_length = 500)
     
 class user(models.Model):
   username_validator = ASCIIUsernameValidator()
@@ -71,6 +71,6 @@ class user(models.Model):
 class userForm(ModelForm):
     class Meta:
         model = user
-        userTemp = models.ForeignKey('self', on_delete=models.CASCADE)
+        
         fields = ['firstName', 'lastName', 'eMail', 'username',
                   'company', 'Manager', 'program', 'phoneNum']

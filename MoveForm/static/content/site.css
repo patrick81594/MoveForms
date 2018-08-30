@@ -6,7 +6,7 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    justify-content: center;
+    
     padding-left: 50px;
     padding-right: 45px;
 }

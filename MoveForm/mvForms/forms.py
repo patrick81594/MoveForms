@@ -49,7 +49,7 @@ class mvForm(forms.ModelForm):
 class assignedTaskForm(forms.ModelForm):
     class Meta:
         model = assignedTask
-        fields = ['assignee','dateDue', 'task']
+        fields = ['assignee', 'assignedTo','dateDue', 'task', 'relatedForm']
 
     def __init__(self, *args, **kwargs):
         super(assignedTaskForm, self).__init__(*args,**kwargs)
@@ -57,7 +57,8 @@ class assignedTaskForm(forms.ModelForm):
         self.helper.form_class = 'inline'
         self.helper.form_method = 'post'
         self.helper.layout = Layout(
-             Field('assignee', css_class='col-sm-2', id = "firstName"),
+             Field('assignee', css_class='col-sm-2'),   
+             Field('assignedTo', css_class='col-sm-2', id = "firstName"),
              Field('dateDue', css_class='col-sm-2'),                      
              Field('task', css_class='col-sm-2'),
              FormActions(

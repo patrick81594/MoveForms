@@ -25,13 +25,14 @@
                 {% bootstrap_form form %}
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <button type="button" class="btn btn-primary" onclick="window.location.href=window.location.href">Cancel</button>
+                </form>
             {% else %}
                 <meta http-equiv="REFRESH" content="0;url=http://localhost:8000/">
             {% endif %}
             
             
             
-        </form>
+        
         </div>
     </div>
 {% endblock %}

@@ -22,18 +22,6 @@ def index(request):
     #output = ', '.join([q.fName for q in latest_moveForm_list])
     return render(request, 'index.html', context)
 
-
-#def detail(request, moveForm_id):
-#    mvFormDetails = get_object_or_404(moveForm, pk = moveForm_id)
-#    #assignedTasks = get_object_or_404(assignedTask, pk = 1)
-#    all_models_dict = {
-#        "template_name": "detail.html",
-#        "queryset": mvFormDetails.objects.all(),
-#        "extra_context":{"moveForm": moveForm.objects.all(),
-#                         "assignedTasks": assignedTask.objects.all(),}
-#        }
-#    print(mvFormDetails)
-#    return render(request, 'detail.html', {'MoveForm': mvFormDetails})
 def detail(request, moveForm_id):
     mvFormDetails = get_object_or_404(moveForm, pk = moveForm_id)
     
@@ -74,28 +62,24 @@ def userForm(request):
             user.last_name = form.cleaned_data['lastName']
             
             user.save()
-
-            auth_login(request, user)
         return render(request, 'index.html', context)
     else:
         form = userRegisterForm()
 
     return render(request, 'userRegister.html', {'form': userRegisterForm()})
 
-def tasksForm(request):
-    latest_moveForm_list = moveForm.objects.order_by('-publication_date')[:5]
+def tasksForm(request, moveForm_id):
+    latest_task_list = list(assignedTask.objects.filter(pk = moveForm_id))
     context = {
-            'latest_moveForm_list' : latest_moveForm_list,
+            'latest_task_list' : latest_task_list,
     }
     if request.method == 'POST':
         form = assignedTaskForm(request.POST, request.FILES)
         if form.is_valid():
-            
-            
             form.save()
         return render(request, 'index.html', context)
     else:
-        form = userRegisterForm()
+        form = assignedTaskForm()
 
     return render(request, 'tasks.html', {'form': assignedTaskForm()})
 
